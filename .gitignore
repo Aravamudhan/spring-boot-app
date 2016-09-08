@@ -1,0 +1,30 @@
+*.class
+# Package Files #
+*.jar
+*.war
+
+target/
+Servers/
+.metadata
+bin/
+tmp/
+logs/
+test-output/
+*.tmp
+*.bak
+*.swp
+*~.nib
+.settings/
+.loadpath
+.recommenders
+
+# Eclipse Core
+.project
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+.launch
+
+.classpath
