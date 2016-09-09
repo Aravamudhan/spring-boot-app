@@ -3,16 +3,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.amudhan</groupId>
-  <artifactId>practice</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>spring-boot-app</artifactId>
   <packaging>jar</packaging>
 
-  <name>practice</name>
+  <name>spring-boot-app</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <h2databse-version>1.4.191</h2databse-version>
+    <main-class>com.amudhan.practice.application.ApplicationStarter</main-class>
   </properties>
   
   <parent>
@@ -61,13 +61,28 @@
     
   <build>
     <plugins>
-  	    <plugin>
-  			<artifactId>maven-compiler-plugin</artifactId>
-		  	<configuration>
-		   		<source>1.8</source>
-		   		<target>1.8</target>
-	      	</configuration>
-  		</plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <fork>true</fork>
+          <mainClass>${main-class}</mainClass>
+         </configuration>
+         <executions>
+           <execution>
+             <goals>
+               <goal>repackage</goal>
+             </goals>
+           </execution>
+         </executions>
+      </plugin>
+  	  <plugin>
+  		<artifactId>maven-compiler-plugin</artifactId>
+		  <configuration>
+		    <source>1.8</source>
+		    <target>1.8</target>
+	      </configuration>
+  	  </plugin>
   	</plugins>
   </build>
 </project>
